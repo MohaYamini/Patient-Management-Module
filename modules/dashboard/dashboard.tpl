@@ -14,7 +14,7 @@
             <div class="col-lg-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                    {php}echo "hello!"{/php}
+                    
                         <p>Total Patients</p>
                     </div>
                     <div class="icon">
