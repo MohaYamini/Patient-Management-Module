@@ -35,4 +35,12 @@ class DoctorController
     {
         return $this->doctor_model->deleteDoctor($id);
     }
+
+    public function getAllDoctors()
+    {
+        $stmt = $this->db->prepare("SELECT id, full_name FROM doctor"); 
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

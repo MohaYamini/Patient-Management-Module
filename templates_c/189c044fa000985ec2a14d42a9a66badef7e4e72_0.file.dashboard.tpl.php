@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2025-01-22 10:24:11
+/* Smarty version 4.0.0, created on 2025-01-22 13:29:50
   from 'C:\xampp\htdocs\Patient-Management-Module\modules\dashboard\dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6790b93b867d60_92949925',
+  'unifunc' => 'content_6790e4be909f28_10490389',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '189c044fa000985ec2a14d42a9a66badef7e4e72' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Patient-Management-Module\\modules\\dashboard\\dashboard.tpl',
-      1 => 1737534070,
+      1 => 1737548981,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6790b93b867d60_92949925 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6790e4be909f28_10490389 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content-header">
     <div class="container-fluid">
         <div class="row">
@@ -37,7 +37,8 @@ function content_6790b93b867d60_92949925 (Smarty_Internal_Template $_smarty_tpl)
             <div class="col-lg-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3><?php echo $_smarty_tpl->tpl_vars['total_patients']->value;?>
+</h3>
                         <p>Total Patients</p>
                     </div>
                     <div class="icon">
@@ -49,7 +50,8 @@ function content_6790b93b867d60_92949925 (Smarty_Internal_Template $_smarty_tpl)
             <div class="col-lg-6">
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>53</h3>
+                        <h3><?php echo $_smarty_tpl->tpl_vars['total_doctors']->value;?>
+</h3>
                         <p>Total Doctors</p>
                     </div>
                     <div class="icon">
@@ -59,7 +61,6 @@ function content_6790b93b867d60_92949925 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
             </div>
         </div>
-
         <!-- Main row -->
         <div class="row">
             <section class="col-lg-7 connectedSortable">

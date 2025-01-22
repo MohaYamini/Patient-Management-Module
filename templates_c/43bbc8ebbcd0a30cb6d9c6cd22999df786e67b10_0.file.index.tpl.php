@@ -1,10 +1,34 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.0.0, created on 2025-01-22 13:59:13
+  from 'C:\xampp-v-7\htdocs\Patient-Management-Module\libs\adminlte\index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.0.0',
+  'unifunc' => 'content_6790eba1dc7077_01642752',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '43bbc8ebbcd0a30cb6d9c6cd22999df786e67b10' => 
+    array (
+      0 => 'C:\\xampp-v-7\\htdocs\\Patient-Management-Module\\libs\\adminlte\\index.tpl',
+      1 => 1737545568,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6790eba1dc7077_01642752 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{$title}</title>
+  <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -86,7 +110,8 @@
       <section class="content">
         <div class="container-fluid">
           <!-- Dynamically loaded content -->
-          {include file=$content_template}
+          <?php $_smarty_tpl->_subTemplateRender($_smarty_tpl->tpl_vars['content_template']->value, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
       </section>
       <!-- right col -->
     </div>
@@ -117,45 +142,84 @@
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-  <script src="libs/adminlte/plugins/jquery/jquery.min.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/jquery/jquery.min.js"><?php echo '</script'; ?>
+>
   <!-- jQuery UI 1.11.4 -->
-  <script src="libs/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/jquery-ui/jquery-ui.min.js"><?php echo '</script'; ?>
+>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
+  <?php echo '<script'; ?>
+>
     $.widget.bridge('uibutton', $.ui.button)
-  </script>
+  <?php echo '</script'; ?>
+>
   <!-- Bootstrap 4 -->
-  <script src="libs/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
+>
   <!-- ChartJS -->
-  <script src="libs/adminlte/plugins/chart.js/Chart.min.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/chart.js/Chart.min.js"><?php echo '</script'; ?>
+>
   <!-- Sparkline -->
-  <script src="libs/adminlte/plugins/sparklines/sparkline.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/sparklines/sparkline.js"><?php echo '</script'; ?>
+>
   <!-- JQVMap -->
-  <script src="libs/adminlte/plugins/jqvmap/jquery.vmap.min.js"></script>
-  <script src="libs/adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/jqvmap/jquery.vmap.min.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js"><?php echo '</script'; ?>
+>
   <!-- jQuery Knob Chart -->
-  <script src="libs/adminlte/plugins/jquery-knob/jquery.knob.min.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/jquery-knob/jquery.knob.min.js"><?php echo '</script'; ?>
+>
   <!-- daterangepicker -->
-  <script src="libs/adminlte/plugins/moment/moment.min.js"></script>
-  <script src="libs/adminlte/plugins/daterangepicker/daterangepicker.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/moment/moment.min.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/daterangepicker/daterangepicker.js"><?php echo '</script'; ?>
+>
   <!-- Tempusdominus Bootstrap 4 -->
-  <script src="libs/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"><?php echo '</script'; ?>
+>
   <!-- Summernote -->
-  <script src="libs/adminlte/plugins/summernote/summernote-bs4.min.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/summernote/summernote-bs4.min.js"><?php echo '</script'; ?>
+>
   <!-- overlayScrollbars -->
-  <script src="libs/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"><?php echo '</script'; ?>
+>
   <!-- AdminLTE App -->
-  <script src="libs/adminlte/dist/js/adminlte.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/dist/js/adminlte.js"><?php echo '</script'; ?>
+>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="libs/adminlte/dist/js/pages/dashboard.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/dist/js/pages/dashboard.js"><?php echo '</script'; ?>
+>
   <!-- AdminLTE for demo purposes -->
-  <script src="libs/adminlte/dist/js/demo.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/dist/js/demo.js"><?php echo '</script'; ?>
+>
   <!-- DataTables -->
-  <script src="libs/adminlte/plugins/datatables/jquery.dataTables.js"></script>
-  <script src="libs/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/datatables/jquery.dataTables.js"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="libs/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js"><?php echo '</script'; ?>
+>
 
   <!-- page script -->
-  <script>
+  <?php echo '<script'; ?>
+>
     $(function() {
       $("#example1").DataTable();
       $("#example2").DataTable({
@@ -167,7 +231,9 @@
         autoWidth: false,
       });
     });
-  </script>
+  <?php echo '</script'; ?>
+>
 </body>
 
-</html>
+</html><?php }
+}

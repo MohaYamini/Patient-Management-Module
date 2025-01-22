@@ -95,6 +95,7 @@ require_once SMARTY_SYSPLUGINS_DIR . 'smarty_internal_resource_file.php';
  */
 class Smarty extends Smarty_Internal_TemplateBase
 {
+    
     /**
      * smarty version
      */

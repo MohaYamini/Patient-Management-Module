@@ -14,7 +14,7 @@
             <div class="col-lg-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                    {php}echo "hello!"{/php}
                         <p>Total Patients</p>
                     </div>
                     <div class="icon">
@@ -26,7 +26,6 @@
             <div class="col-lg-6">
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>53</h3>
                         <p>Total Doctors</p>
                     </div>
                     <div class="icon">
@@ -36,7 +35,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Main row -->
         <div class="row">
             <section class="col-lg-7 connectedSortable">

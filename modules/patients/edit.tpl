@@ -1,33 +1,10 @@
-<?php
-/* Smarty version 4.0.0, created on 2025-01-22 11:57:57
-  from 'C:\xampp\htdocs\Patient-Management-Module\modules\doctors\form.tpl' */
-
-/* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '4.0.0',
-  'unifunc' => 'content_6790cf35756643_14365977',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    'fc3a7375e9ee1e8e2006a3a05f537bf8e742a7e7' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\Patient-Management-Module\\modules\\doctors\\form.tpl',
-      1 => 1737543467,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_6790cf35756643_14365977 (Smarty_Internal_Template $_smarty_tpl) {
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Add doctor</title>
+    <title>Edit patient</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,7 +56,7 @@ function content_6790cf35756643_14365977 (Smarty_Internal_Template $_smarty_tpl)
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="/Patient-Management-Module/index.php?module=patients&page=list" class="nav-link">
                                 <i class="nav-icon fas fa-book-medical"></i>
                                 <p>
                                     Patients
@@ -87,11 +64,11 @@ function content_6790cf35756643_14365977 (Smarty_Internal_Template $_smarty_tpl)
                             </a>
                         </li>
                         <li class="nav-item">
-    <a href="/Patient-Management-Module/index.php?module=doctors&page=list" class="nav-link">
-        <i class="nav-icon fas fa-user-md"></i>
-        <p>Doctors</p>
-    </a>
-</li>
+                            <a href="/Patient-Management-Module/index.php?module=doctors&page=list" class="nav-link">
+                                <i class="nav-icon fas fa-user-md"></i>
+                                <p>Doctors</p>
+                            </a>
+                        </li>
 
                     </ul>
                 </nav>
@@ -107,7 +84,7 @@ function content_6790cf35756643_14365977 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Doctors</h1>
+                            <h1 class="m-0 text-dark">Patients</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -121,35 +98,71 @@ function content_6790cf35756643_14365977 (Smarty_Internal_Template $_smarty_tpl)
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Add doctor</h3>
+                                <h3 class="card-title">Edit patient</h3>
                             </div>
-                            <form action="create.php" method="POST">
+                            <form action="update.php" method="POST">
                                 <div class="card-body">
+                                    <!-- Hidden field to store patient ID -->
+                                    <input type="hidden" name="id" value="{$patient.id}">
+
                                     <div class="form-group">
                                         <label for="full_name">Full Name</label>
                                         <input type="text" class="form-control" id="full_name" name="full_name"
-                                            placeholder="Enter full name" required>
+                                            value="{$patient.full_name}" required>
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="specialty">Specialty</label>
-                                        <input type="text" class="form-control" id="specialty" name="specialty"
-                                            placeholder="Enter specialty" required>
+                                        <label for="phone">Phone</label>
+                                        <input type="text" class="form-control" id="phone" name="phone"
+                                            value="{$patient.phone}" required>
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="phone">Phone Number</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone"
-                                            placeholder="Enter phone number" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email Address</label>
+                                        <label for="email">Email</label>
                                         <input type="email" class="form-control" id="email" name="email"
-                                            placeholder="Enter email" required>
+                                            value="{$patient.email}" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="date">Date</label>
+                                        <input type="date" class="form-control" id="date" name="date"
+                                            value="{$patient.date}" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="date_of_birth">Date of Birth</label>
+                                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"
+                                            value="{$patient.date_of_birth}" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="gender">Gender</label>
+                                        <select class="form-control" id="gender" name="gender" required>
+                                            <option value="Male" {if $patient.gender == 'Male'}selected{/if}>Male
+                                            </option>
+                                            <option value="Female" {if $patient.gender == 'Female'}selected{/if}>Female
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="doctor_id">Doctor</label>
+                                        <select class="form-control" id="doctor_id" name="doctor_id" required>
+                                            {foreach from=$doctors item=doctor}
+                                                <option value="{$doctor.id}"
+                                                    {if $doctor.id == $patient.doctor_id}selected{/if}>
+                                                    {$doctor.full_name}
+                                                </option>
+                                            {/foreach}
+                                        </select>
                                     </div>
                                 </div>
+
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Add doctor</button>
+                                    <button type="submit" class="btn btn-primary">Update Patient</button>
                                 </div>
                             </form>
+
                         </div>
                         <!-- /.card -->
                     </div>
@@ -183,84 +196,45 @@ function content_6790cf35756643_14365977 (Smarty_Internal_Template $_smarty_tpl)
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <?php echo '<script'; ?>
- src="libs/adminlte/plugins/jquery/jquery.min.js"><?php echo '</script'; ?>
->
+    <script src="libs/adminlte/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
-    <?php echo '<script'; ?>
- src="libs/adminlte/plugins/jquery-ui/jquery-ui.min.js"><?php echo '</script'; ?>
->
+    <script src="libs/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <?php echo '<script'; ?>
->
+    <script>
         $.widget.bridge('uibutton', $.ui.button)
-    <?php echo '</script'; ?>
->
+    </script>
     <!-- Bootstrap 4 -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/chart.js/Chart.min.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/sparklines/sparkline.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/sparklines/sparkline.js"></script>
     <!-- JQVMap -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/jqvmap/jquery.vmap.min.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="../../libs/adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
     <!-- jQuery Knob Chart -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/jquery-knob/jquery.knob.min.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/moment/moment.min.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/daterangepicker/daterangepicker.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/moment/moment.min.js"></script>
+    <script src="../../libs/adminlte/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- Tempusdominus Bootstrap 4 -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <!-- Summernote -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/summernote/summernote-bs4.min.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/summernote/summernote-bs4.min.js"></script>
     <!-- overlayScrollbars -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/dist/js/adminlte.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/dist/js/pages/dashboard.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/dist/js/demo.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/dist/js/demo.js"></script>
     <!-- DataTables -->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/datatables/jquery.dataTables.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="../../libs/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js"><?php echo '</script'; ?>
->
+    <script src="../../libs/adminlte/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="../../libs/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 
     <!-- page script -->
-    <?php echo '<script'; ?>
->
+    <script>
         $(function() {
             $("#example1").DataTable();
             $("#example2").DataTable({
@@ -272,9 +246,7 @@ function content_6790cf35756643_14365977 (Smarty_Internal_Template $_smarty_tpl)
                 autoWidth: false,
             });
         });
-    <?php echo '</script'; ?>
->
+    </script>
 </body>
 
-</html><?php }
-}
+</html>

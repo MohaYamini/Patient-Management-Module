@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2025-01-22 09:51:19
+/* Smarty version 4.0.0, created on 2025-01-22 13:29:50
   from 'C:\xampp\htdocs\Patient-Management-Module\libs\adminlte\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6790b187dc2de7_76351930',
+  'unifunc' => 'content_6790e4be85f2d6_93656171',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '979c8bf897e45d757c940d381491f80b36952fcd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Patient-Management-Module\\libs\\adminlte\\index.tpl',
-      1 => 1737534184,
+      1 => 1737545568,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6790b187dc2de7_76351930 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6790e4be85f2d6_93656171 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -78,7 +78,7 @@ function content_6790b187dc2de7_76351930 (Smarty_Internal_Template $_smarty_tpl)
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/calendar.html" class="nav-link">
+              <a href="index.php?module=patients&page=list" class="nav-link">
                 <i class="nav-icon fas fa-book-medical"></i>
                 <p>
                   Patients

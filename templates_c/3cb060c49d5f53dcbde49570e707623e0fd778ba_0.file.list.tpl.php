@@ -1,4 +1,27 @@
-<div class="content-header">
+<?php
+/* Smarty version 4.0.0, created on 2025-01-22 14:05:35
+  from 'C:\xampp-v-7\htdocs\Patient-Management-Module\modules\patients\list.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.0.0',
+  'unifunc' => 'content_6790ed1fbe6a78_55482068',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '3cb060c49d5f53dcbde49570e707623e0fd778ba' => 
+    array (
+      0 => 'C:\\xampp-v-7\\htdocs\\Patient-Management-Module\\modules\\patients\\list.tpl',
+      1 => 1737546656,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6790ed1fbe6a78_55482068 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="content-header">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
@@ -81,11 +104,18 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<?php echo '<script'; ?>
+ src="https://code.jquery.com/jquery-3.5.1.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"><?php echo '</script'; ?>
+>
 
-<script>
+<?php echo '<script'; ?>
+>
     var table;
 
     $(document).ready(function() {
@@ -179,4 +209,6 @@
     });
 };
 
-</script>
+<?php echo '</script'; ?>
+><?php }
+}

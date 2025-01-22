@@ -13,12 +13,12 @@ require_once 'modules/doctors/DoctorController.php';
 
 try {
     // Get the 'module' and 'page' parameters from the URL
-    $module = $_GET['module'] ?? 'dashboard'; // Default module
+    $module = $_GET['module'] ?? 'patients'; // Default module
     $page = $_GET['page'] ?? 'index';         // Default page
 
     // Determine the content template
-    if ($module === 'dashboard') {
-        $contentTemplate = 'modules/dashboard/dashboard.tpl';
+    if ($module === 'patients') {
+        $contentTemplate = 'modules/patients/list.tpl';
     } else {
         $contentTemplate = "modules/{$module}/{$page}.tpl";
     }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.0.0, created on 2025-01-22 11:33:06
-  from 'C:\xampp\htdocs\Patient-Management-Module\modules\doctors\edit.tpl' */
+/* Smarty version 4.0.0, created on 2025-01-22 14:05:36
+  from 'C:\xampp-v-7\htdocs\Patient-Management-Module\modules\patients\form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.0.0',
-  'unifunc' => 'content_6790c96272b722_95249374',
+  'unifunc' => 'content_6790ed209cd6a1_00081165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '48b1f36117d9f16dbe4fd4b60622dde2e3adf561' => 
+    'f5692d01dedd63146e771dd0d6b491408be81762' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Patient-Management-Module\\modules\\doctors\\edit.tpl',
-      1 => 1737541967,
+      0 => 'C:\\xampp-v-7\\htdocs\\Patient-Management-Module\\modules\\patients\\form.tpl',
+      1 => 1737546871,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6790c96272b722_95249374 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6790ed209cd6a1_00081165 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Edit doctor</title>
+    <title>Add patient</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,7 +79,7 @@ function content_6790c96272b722_95249374 (Smarty_Internal_Template $_smarty_tpl)
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="/Patient-Management-Module/index.php?module=patients&page=list" class="nav-link">
                                 <i class="nav-icon fas fa-book-medical"></i>
                                 <p>
                                     Patients
@@ -87,13 +87,12 @@ function content_6790c96272b722_95249374 (Smarty_Internal_Template $_smarty_tpl)
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?module=doctors&page=list" class="nav-link">
+                            <a href="/Patient-Management-Module/index.php?module=doctors&page=list" class="nav-link">
                                 <i class="nav-icon fas fa-user-md"></i>
-                                <p>
-                                    Doctors
-                                </p>
+                                <p>Doctors</p>
                             </a>
                         </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -108,7 +107,7 @@ function content_6790c96272b722_95249374 (Smarty_Internal_Template $_smarty_tpl)
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Doctors</h1>
+                            <h1 class="m-0 text-dark">Patients</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -122,45 +121,62 @@ function content_6790c96272b722_95249374 (Smarty_Internal_Template $_smarty_tpl)
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">Edit doctor</h3>
+                                <h3 class="card-title">Add patient</h3>
                             </div>
-                            <form action="update.php" method="POST">
-                                <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['id'];?>
-" />
-
+                            <form action="create.php" method="POST">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="full_name">Full Name</label>
                                         <input type="text" class="form-control" id="full_name" name="full_name"
-                                            value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['full_name'];?>
-" required>
+                                            required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="specialty">Specialty</label>
-                                        <input type="text" class="form-control" id="specialty" name="specialty"
-                                            value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['specialty'];?>
-" required>
+                                        <label for="phone">Phone</label>
+                                        <input type="text" class="form-control" id="phone" name="phone" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="phone">Phone Number</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone"
-                                            value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['phone'];?>
-" required>
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">Email Address</label>
-                                        <input type="email" class="form-control" id="email" name="email"
-                                            value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['email'];?>
-" required>
+                                        <label for="date">Date</label>
+                                        <input type="date" class="form-control" id="date" name="date" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date_of_birth">Date of Birth</label>
+                                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Gender</label>
+                                        <select class="form-control" id="gender" name="gender" required>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="doctor_id">Doctor</label>
+                                        <select class="form-control" id="doctor_id" name="doctor_id" required>
+                                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['doctors']->value, 'doctor');
+$_smarty_tpl->tpl_vars['doctor']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['doctor']->value) {
+$_smarty_tpl->tpl_vars['doctor']->do_else = false;
+?>
+                                                <option value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['doctor']->value['full_name'];?>
+</option>
+                                            <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <input type="hidden" name="doctor_id" value="<?php echo $_smarty_tpl->tpl_vars['doctor']->value['id'];?>
-" />
-                                    <button type="submit" class="btn btn-primary">Update doctor</button>
+
+                                    <button type="submit" class="btn btn-primary">Add Patient</button>
                                 </div>
                             </form>
-
                         </div>
                         <!-- /.card -->
                     </div>
